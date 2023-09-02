@@ -1,4 +1,4 @@
-package com.project.smartcontactmanager.dao;
+package com.project.smartcontactmanager.model;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -24,5 +24,12 @@ public class Contact {
 
     @Column(length = 1000)
     private String description;
+
+    @ManyToOne
+    private User user;
+
+
+
+
 
 }

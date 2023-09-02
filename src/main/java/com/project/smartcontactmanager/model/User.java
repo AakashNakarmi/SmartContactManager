@@ -1,16 +1,18 @@
-package com.project.smartcontactmanager.dao;
+package com.project.smartcontactmanager.model;
 
 
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 @Getter
 @Setter
 @Entity
 @Table(name = "USER")
-
 public class User {
 
 
@@ -30,9 +32,10 @@ public class User {
     @Column(length = 500)
     private String about;
 
-    public User(){
-        super();
-    }
+    @OneToMany
+    private List<Contact> contacts=new ArrayList<>();
+
+
 
 
 }
